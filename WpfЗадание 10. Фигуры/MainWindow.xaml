@@ -1,0 +1,60 @@
+﻿<Window x:Class="WpfЗадание_10.Фигуры.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfЗадание_10.Фигуры"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="600" Background="#CCCC">
+
+    <StackPanel>
+        <Border BorderBrush="AliceBlue" BorderThickness="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image Source="Data/kosmos_zvezdy.jpg" Width="200" Height="270" x:Name="Image"/>
+            
+            <Border.Effect>
+                <DropShadowEffect Color="Black" Direction="40" ShadowDepth="20" Opacity="0.4"/>
+            </Border.Effect>
+            
+            <Border.RenderTransform>
+                <SkewTransform CenterX="0" CenterY="0" AngleX="0" AngleY="10"/>
+            </Border.RenderTransform>
+            
+        </Border>
+        
+        
+        <Border Width="210" Height="270" >
+            <Border.Background>
+                <VisualBrush Visual="{Binding ElementName=Image}">
+                    
+                    <VisualBrush.Transform>
+                        <ScaleTransform ScaleX="1" ScaleY="1" CenterX="200" CenterY="150">
+                        </ScaleTransform>
+                    </VisualBrush.Transform>
+                    
+                </VisualBrush>
+            </Border.Background>
+            
+            <Border.OpacityMask>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Offset="0" Color="DimGray"></GradientStop>
+                    <GradientStop Offset="0.5" Color="Transparent"></GradientStop>
+                </LinearGradientBrush>
+            </Border.OpacityMask>
+            
+            <Border.RenderTransform>
+                <SkewTransform CenterX="30" CenterY="2" AngleX="-30" AngleY="10"/>
+            </Border.RenderTransform>
+        </Border>
+        <!--<Button Width="200" Height="100" Content="Button" Click="Button_Click">
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="Blue" Offset="0"/>
+                    <GradientStop Color="Red" Offset="0.5"/>
+                    <GradientStop Color="Green" Offset="1"/>
+                </LinearGradientBrush>
+
+            </Button.Background>
+        </Button>-->
+
+    </StackPanel>
+</Window>
